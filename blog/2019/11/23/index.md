@@ -1,3 +1,6 @@
+---
+title: Useful daily bask command: find duplicates files
+---
 
 # Useful daily bask command: find duplicates files
 
