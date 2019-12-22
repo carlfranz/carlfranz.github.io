@@ -2,19 +2,21 @@
 title: Useful daily git command: remove useless remotes
 ---
 # Useful daily git command: remove useless remotes
-Working with feature branches is pretty handy. You branch from the `develop` into a `feature/<something>` branch then start committing and create a merge request. Your repository manager should handle merge requests. Once the job is done and you need to merge into `develop` the repository manager allow you to do it from web, and as a side effect it can remove the branch. Not bad, the job is done and we have tracked the edits with a "merge commit". 
+Working with feature branches is pretty handy. Everything starts with a branch from `develop` named `feature/<something>`. When you start committing, changes does not affect the `develop` branch. 
+If your repository manager handles merge requests, once the branch is created, you open a merge request. When the feature job is done you close the request and through web, merge changes into `develop` branch. 
+As a side effect the repository manager removes the branch. Not bad, the job is done and the edits are tracked with a "merge commit".
 
-By client side, those branches are never removed. This could lead to a messy repository and wrong checkouts, better keep the stuff nice, to avoid useless problems. Here this command come handy.
+By client side, those branches are never removed. This could lead to a messy repository and wrong checkouts, better keep the stuff nice, to avoid useless problems. Here this command come in help.
 
 ```bash
 git fetch origin --prune
 ```
 
-What `fetch` do is to get "news" about remote branch. What the flag `--prune` do is explained by the git documentation:
+What `fetch` do is to get "news" about remote branches. What the flag `--prune` do is explained by the git documentation:
 
 > Before fetching, remove any remote-tracking references that no longer exist on the remote. 
 
-Doing that to my repository lead to this output:
+Doing that on one of my repositories lead to this output:
 ```
 From gitlab.mgmt.somewhere.it:lceyt/nova
  - [deleted]           (none)     -> origin/feature/closed-domain-queries
