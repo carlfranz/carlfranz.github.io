@@ -20,7 +20,7 @@ committed, this leads us to a form of the function:
 
 <img src="https://latex.codecogs.com/gif.latex?x%5E2&plus;e%20%3D%20a" />
 
-With each iteration of the algorithm, we want the error to decrease, so we iterate until and it is
+With each iteration of the algorithm, we want the error to decrease, so we iterate until `e` it is
 not "small" enough (`e <0.00001`). We now need a function to calculate the "attempt" `x`.
 This is given by the formula:
 
